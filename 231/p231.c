@@ -48,19 +48,21 @@ int compute_prime_factors(long double a,int sz){
     
     double primes[sz];
     compute_sieve(primes,sz);
-    int res[10]; /*store the result here*/
+    int res[sz]; /*store the result here*/
     int i ;/*index of primes array*/
     int pos = 0 ; /*position in result array */
 
     for( i = 2 ;i < sz ; i++){ 
         if(primes[i] > 0 ){
-        while(fmod(a,primes[i]) == 0 ){
-            a = a / primes[i];
-            pos++;
-        }
-        res[i] = pos ;
-        pos = 0 ;
-        printf("You need %d %.0fs\n",res[i],primes[i] );
+            while(fmod(a,primes[i]) == 0 ){
+                a = a / primes[i];
+                pos++;
+            }
+            res[i] = pos ;
+            pos = 0 ;
+            if(res[i] > 0 ){
+                printf("You need %d %.0f(s)\n",res[i],primes[i] );
+            }
         }
     }
     return 0 ;
@@ -77,6 +79,7 @@ double getgcd(double a , double b){
 
 int* compute_sieve(double *arr, int max){
     int i ;
+    int j = 0 ;
     int nums[max] ;
     for (i = 2 ; i < max ; i++){
         arr[i] = i ;
@@ -86,9 +89,9 @@ int* compute_sieve(double *arr, int max){
     for (i = 2 ; i < max ; i++){
         if (arr[i] > 0){
             printf("Found prime %.0f\n", arr[i]);
-            int j = i ;
+            j = i ;
             while ((j)*arr[i] <=  max){
-                arr[nums[i]*(j)] = -1 ;
+                arr[i*(j)] = -1 ;
                 j++;
             }
         }
