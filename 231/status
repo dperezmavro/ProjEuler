@@ -1,0 +1,5 @@
+made coefficient calculation more eficient, but still breaks for n,k > 200000,150000
+computing sieve and naively breaking down into prime factors works for small numbers, but breaks for large ones.
+
+need to :
+    make factorization more efficient
