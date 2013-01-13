@@ -1,5 +1,5 @@
 *.sw*
-
+*.*~
 # Object files
 *.o
 
