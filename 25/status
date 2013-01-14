@@ -1,2 +1,3 @@
 solved it for perl
 need to implement big number handling for C, methodology is the same.
+    using the gmp package for large numbers
