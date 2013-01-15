@@ -1,0 +1,9 @@
+factorization done using fermat's method
+	can be improved I think
+
+Thanks to alexander B. for his great way of generating the palindromes and guidance on a different perspective 
+
+possible improvements :
+	better factorization
+bugs :
+	It gets stuck at the palindrome before 900009 (8....8, i am running those in decreasing order)
