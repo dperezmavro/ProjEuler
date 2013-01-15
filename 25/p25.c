@@ -18,12 +18,10 @@ int main(void){
 	mpz_ui_pow_ui(limit,10,999);
 
 	while (mpz_cmp(next,limit) <= 0 ){//limit ){
-	/*
-		next = a + b ;
-		a = b ;
-		b = next ;
+		mpz_add(next, a, b) ;
+		mpz_set(a, b) ;
+		mpz_set(b,next) ;
 		count++;
-	*/
 	}
 
 	printf("The first 1000-digit Fibonacci number is %d \n",count);
