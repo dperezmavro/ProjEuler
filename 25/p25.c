@@ -7,7 +7,7 @@ int main(void){
 	mpz_t a  ;
 	mpz_init_set_d(a,1);
 	mpz_t b  ;
-	mpz_init_set_d(b,2);
+	mpz_init_set_d(b,1);
 	mpz_t next ;
 	mpz_init_set_d(next,0);
 
