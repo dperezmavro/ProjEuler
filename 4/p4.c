@@ -12,11 +12,9 @@ int main(void){
 
 	for (b = 899 ; b >= 0 ; b--){
 
-		printf("Running for %d , b %d...\n", palindromes[b],b);
-		
+		printf("Running for %d...\n", palindromes[b]);
 		FermatFact(&ff , palindromes[b]);
 		
-		printf(" for %d ,%d  %d...\n", palindromes[b],ff.a,ff.b);
 		if( ff.a > 100  && ff.a < 1000 && ff.b > 100 &&ff.b < 1000 ){
 			printf("    Found palindrome with 3-digit factors, it is %d, factors (%d,%d) \n", palindromes[b], ff.a,ff.b);
 			break;
