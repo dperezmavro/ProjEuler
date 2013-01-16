@@ -29,7 +29,7 @@ palindromes = [p for p in reversed(pals())]
 for i in palindromes :
 	print 'Running for '+str(i)
 	res = FermatFactorization(i)
-	if len(str(int(res[0]))) == 3 and len(str(int(res[1]))) == 3 :
+	if len(str(int(res[0])))  == 3  and len(str(int(res[1]))) == 3 :
 		print 'First palindrome which is a product of two 3-digit numbers is '+str(i)
-		print str(i)+' : '+str(res[0])+', '+str(res[0])
+		print str(i)+' : '+str(res[0])+', '+str(res[1])
 		break
