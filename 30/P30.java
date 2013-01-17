@@ -10,8 +10,8 @@ public class P30{
 		int sum = 0 ;
 		int limit = (int) Math.pow(9,5);
 		limit *= 5;
-
-		for (int i = 10000; i <= 99999 ; i++){
+	
+		for (int i = 2; i <= 10000000; i++){
 			if ( i == sum(i) ){
 				System.out.println("Found narcisistic number "+i);
 				sum += i ;
@@ -22,7 +22,7 @@ public class P30{
 	}
 
 	public int sum(int i){
-		int n1 = i/( (int) Math.pow(10,4)) ;
+		int n1 = = i/( (int) Math.pow(10,4)) ;
 		i %= 10000 ;
 		int n2 = i/( (int) Math.pow(10,3)) ;
 		i %= 1000 ;
@@ -32,6 +32,6 @@ public class P30{
 		i %= 10 ;
 		int n5 = i;
 		
-		return (int)(Math.pow(n1,5)+Math.pow(n2,5)+Math.pow(n3,5)+Math.pow(n4,5)+Math.pow(n5,5)) ;
+		return (int)(Math.pow(n1,5)+Math.pow(n2,5)+Math.pow(n3,5)+Math.pow(n5,5)+Math.pow(n5,5)) ;
 	}
 }
