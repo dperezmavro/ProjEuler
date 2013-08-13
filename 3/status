@@ -1,2 +1,3 @@
-unsolved
+solved using fermat's factorization in python
+
 read this for efficient number factorization, explains quadratic sieve :  http://blogs.msdn.com/b/devdev/archive/2006/06/19/637332.aspx
