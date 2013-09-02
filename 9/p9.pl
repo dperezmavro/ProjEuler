@@ -8,8 +8,9 @@
 # therefore 500 = [2*250,4*125,20*25,100*5]
 # since m > n --> m = [5,250], n = [2,100]
 
-foreach $m (250 125 25 5) {
-	foreach $n ( 2 4 20 100 ){
+
+foreach $m (reverse(1..250)) {
+	foreach $n(1..100){
 		print get_nums($m, $n) if $m*($n+$m) == 500 and $m > $n;
 	}
 }
@@ -19,5 +20,5 @@ sub get_nums($m, $n){
 	$b = 2*$m*$n ;
 	$c = $m**2 + $n**2 ;
 	$prod = $a * $b * $c ;
-	return "m = $m, n = $n , a = $a , c = $c , b = $b , product is a$prod\n";
+	return "m = $m, n = $n \na = $a , c = $c , b = $b \nproduct is $prod\n";
 }
