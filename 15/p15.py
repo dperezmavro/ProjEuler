@@ -4,7 +4,6 @@ import sys
 
 fringe = []
 values = []
-visited = []
 side = 0 
 
 def expand(x,y):
@@ -29,8 +28,6 @@ def expand(x,y):
   else:
     for i in values:
       print i
-
-
 
 if __name__ == "__main__":
   side = int(sys.argv[1])
