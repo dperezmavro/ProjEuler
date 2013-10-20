@@ -33,24 +33,6 @@ unsigned int greatest_ur(int i, int j){
     return res ;
 }
 
-unsigned int greatest_ul(int i, int j){
-    unsigned int res = 1 ;
-    res *= numbers[i][j];
-    res *= numbers[j-1][i-1];
-    res *= numbers[j-2][i-2];
-    res *= numbers[j-3][i-3];
-    return res ;
-}
-
-unsigned int greatest_dl(int i, int j){
-    unsigned int res = 1 ;
-    res *= numbers[i][j];
-    res *= numbers[j+1][i-1];
-    res *= numbers[j+2][i-2];
-    res *= numbers[j+3][i-3];
-    return res ;
-}
-
 unsigned int greatest_dr(int i, int j){
     unsigned int res = 1 ;
     res *= numbers[i][j];
@@ -87,30 +69,27 @@ int main(void){
 
     unsigned int max = 0 ;
     unsigned int currRess = 0 ;
-    unsigned int ul = 0 ;
     unsigned int ur = 0 ;
     unsigned int dr = 0 ;
-    unsigned int dl = 0 ;
     unsigned int right = 0 ;
     unsigned int down = 0 ;
 
-    int i = 3 ;
-    int j = 3 ;
+    int i = 0 ;
+    int j = 0 ;
     for( ; j < SIDE ; j++){
         for( ; i < SIDE ; i++){
             right = greatest_right(i,j);
             down = greatest_down(i,j);
             max = right > max ? right : max ;
             max = down > max ? down : max ;
-            if( i > 2 && i < SIDE - 3 && j > 2 && j < SIDE - 3){ 
-                ul = greatest_ul(i,j);
-                max = ul > max ? ul : max ;
+            if ( j > 2 && i < SIDE - 3){
                 ur = greatest_ur(i,j);
                 max = ur > max ? ur : max ;
+            } 
+
+            if ( j < SIDE - 3 && i  < SIDE -3 ){
                 dr = greatest_dr(i,j);
                 max = dr > max ? dr : max ;
-                dl = greatest_dl(i,j);
-                max = dl > max ? dl : max ;
             }
         }
     } 
