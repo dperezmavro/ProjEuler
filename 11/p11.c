@@ -26,7 +26,7 @@ static unsigned int numbers[20][20] = {
 
 unsigned int greatest_ur(int i, int j){
     unsigned int res = 1 ;
-    res *= numbers[i][j];
+    res *= numbers[j][i];
     res *= numbers[j-1][i+1];
     res *= numbers[j-2][i+2];
     res *= numbers[j-3][i+3];
@@ -44,19 +44,18 @@ unsigned int greatest_dr(int i, int j){
 
 unsigned int greatest_down(int i, int j){
     int res = 1 ;
-    if(j < SIDE - 3){
+    if(j < SIDE - 2){
         res *= numbers[j][i];
         res *= numbers[j+1][i];
         res *= numbers[j+2][i];
         res *= numbers[j+3][i];
     }
-
     return res ;
 }
 
 unsigned int greatest_right(int i , int j ){
     int res = 1 ;
-    if(i < SIDE -3){
+    if(i < SIDE - 2){
         res *= numbers[j][i];
         res *= numbers[j][i+1];
         res *= numbers[j][i+2];
@@ -68,7 +67,6 @@ unsigned int greatest_right(int i , int j ){
 int main(void){
 
     unsigned int max = 0 ;
-    unsigned int currRess = 0 ;
     unsigned int ur = 0 ;
     unsigned int dr = 0 ;
     unsigned int right = 0 ;
@@ -77,20 +75,22 @@ int main(void){
     int i = 0 ;
     int j = 0 ;
     for( ; j < SIDE ; j++){
-        for( ; i < SIDE ; i++){
+        for( i = 0 ; i < SIDE ; i++){
             right = greatest_right(i,j);
             down = greatest_down(i,j);
             max = right > max ? right : max ;
             max = down > max ? down : max ;
-            if ( j > 2 && i < SIDE - 3){
+            if ( j > 2 && i < SIDE - 2){
                 ur = greatest_ur(i,j);
                 max = ur > max ? ur : max ;
             } 
 
-            if ( j < SIDE - 3 && i  < SIDE -3 ){
+            if ( j < SIDE - 2 && i  < SIDE - 2 ){
                 dr = greatest_dr(i,j);
                 max = dr > max ? dr : max ;
             }
+            
+            printf("%d) down : %d , right %d , ur %d, dr %d\n", (j*10)+(i+1),down, right , ur, dr);
         }
     } 
 
