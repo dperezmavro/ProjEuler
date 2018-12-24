@@ -8,4 +8,4 @@
          (= (modulo current 5) 0))
             (main (+ 1 current) (+ sum current))
             (main (+ 1 current) sum))
-        sum)))            
+        sum)))
