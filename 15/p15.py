@@ -26,8 +26,9 @@ def expand(x,y):
     point = fringe.pop(0)
     expand(point[0],point[1])
   else:
-    for i in values:
-      print i
+    v = values[len(values)-1]
+    print v[len(values)-1]
+    
 
 if __name__ == "__main__":
   side = int(sys.argv[1])
