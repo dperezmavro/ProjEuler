@@ -19,7 +19,7 @@ type sides struct {
 func buildBigSideSquares(upperLimit uint) map[uint]uint {
 	var biggerSideSquares = make(map[uint]uint, upperLimit/2)
 	var i uint
-	for i = 1; i < upperLimit; i++ {
+	for i = upperLimit / 3; i < upperLimit/2; i++ {
 		biggerSideSquares[i*i] = i
 	}
 
@@ -45,9 +45,9 @@ func calculatePairs(p uint) []sides {
 	return s
 }
 
-func allPairs(p uint) []sides {
+func allPairs(perimeter uint) []sides {
 	var i uint
-	var upperBound = ((p + 1) / 3) * 2
+	var upperBound = ((perimeter + 1) * 2) / 3
 	var s []sides
 	for i = 2; i < upperBound; i++ {
 		s = append(s, calculatePairs(i)...)

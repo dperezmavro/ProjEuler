@@ -18,6 +18,11 @@ func TestGetSolutions(t *testing.T) {
 			sideSum:   120,
 			solutions: 6,
 		},
+		{
+			name:      "solution",
+			sideSum:   840,
+			solutions: 16,
+		},
 	}
 
 	for _, tt := range tests {
